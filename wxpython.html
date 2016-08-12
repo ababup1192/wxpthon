@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="EUC-JP" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=EUC-JP" />
+ <meta http-equiv="content-style-type" content="text/css" />
+
+ <title>Python/wxPythonによるWindowsGUIプログラミング - labs.beatcraft.com</title>
+
+ <link rel="SHORTCUT ICON" href="" />
+ <link rel="stylesheet" type="text/css" media="screen" href="skin/pukiwiki.css.php?charset=EUC-JP" charset="EUC-JP" />
+ <link rel="stylesheet" type="text/css" media="print"  href="skin/pukiwiki.css.php?charset=EUC-JP&amp;media=print" charset="EUC-JP" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="http://labs.beatcraft.com/ja/index.php?cmd=rss" />
+
+</head>
+<body>
+
+<div id="header">
+ <a href="http://labs.beatcraft.com/ja/index.php?labs.beatcraft.com"><img id="logo" src="image/bc_logo.png" width="142" height="92" alt="[BC::Labs]" title="[BC::Labs]" /></a>
+
+ <h1 class="title"><a href="http://labs.beatcraft.com/ja/index.php?plugin=related&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0">Python/wxPythonによるWindowsGUIプログラミング</a> </h1>
+
+    <a href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><span class="small">http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0</span></a>
+ 
+</div>
+
+<div id="navigator">
+ [ <a href="http://labs.beatcraft.com/ja/index.php?labs.beatcraft.com" >トップ</a> ] &nbsp;
+
+ [
+ 	<a href="http://labs.beatcraft.com/ja/index.php?cmd=edit&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" >編集</a> |
+			<a href="http://labs.beatcraft.com/ja/index.php?cmd=freeze&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" >凍結</a> |
+	  <a href="http://labs.beatcraft.com/ja/index.php?cmd=diff&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" >差分</a> 	| <a href="http://labs.beatcraft.com/ja/index.php?cmd=backup&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" >バックアップ</a>  	| <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=upload&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" >添付</a>  | <a href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" >リロード</a> ] &nbsp;
+
+ [
+ 	<a href="http://labs.beatcraft.com/ja/index.php?plugin=newpage&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" >新規</a> |
+    <a href="http://labs.beatcraft.com/ja/index.php?cmd=list" >一覧</a>  | <a href="http://labs.beatcraft.com/ja/index.php?cmd=search" >単語検索</a> | <a href="http://labs.beatcraft.com/ja/index.php?RecentChanges" >最終更新</a> ]
+
+</div>
+
+<hr class="full_hr" />
+<table border="0" style="width:100%">
+ <tr>
+  <td class="menubar">
+   <div id="menubar"><script language="javascript">
+<!--
+function external_link(){
+   var host_Name = location.host;
+   var host_Check;
+   var link_Href;
+
+   for(var i=0; i < document.links.length; ++i)
+   {
+       link_Href = document.links[i].host;
+       host_Check = link_Href.indexOf(host_Name,0);
+
+       if(host_Check == -1){
+           document.links[i].innerHTML = document.links[i].innerHTML + "<img src=\"image/external_link.gif\" height=\"11px\" width=\"11px\" alt=\"[link to out-side of this site]\" class=\"external_link\">";
+       }
+
+   }
+}
+window.onload = external_link;
+-->
+</script><noscript></noscript>
+<p><a href="http://labs.beatcraft.com/ja/index.php?Open%20Source%20Gadgets" title="Open Source Gadgets (2039d)">Open Source Gadgets</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?bc10Mk-II" title="bc10Mk-II (1367d)">bc10Mk-II</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?bc10" title="bc10 (912d)">bc10</a><br />
+　└<a href="http://labs.beatcraft.com/ja/index.php?Open%20Source%20Gadgets%2Fbc9" title="Open Source Gadgets/bc9 (2254d)">bc9</a><br /></p>
+<p><a href="http://labs.beatcraft.com/ja/index.php?Software" title="Software (2614d)">Software</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Software%2FAndroid" title="Software/Android (253d)">Android</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?ANT%2FBCA_Lib" rel="nofollow">ANT</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?OpenFlow" title="OpenFlow (1079d)">OpenFlow</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Docker" title="Docker (779d)">Docker</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?OS%20X" title="OS X (688d)">OS X</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?CUDA" title="CUDA (562d)">CUDA</a> <br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Synthesijer" title="Synthesijer (709d)">Synthesijer</a> <br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?JavaRock" title="JavaRock (709d)">JavaRock</a> <br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?DE0-Nano%2FNiosII_uClinux" rel="nofollow">Nios II uClinux</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Hadoop" title="Hadoop (1946d)">Hadoop</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Python" title="Python (688d)">Python</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Deep%20Learning" title="Deep Learning (232d)">Deep Learning</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Software%2Fintel%20IPP" title="Software/intel IPP (2652d)">intel IPP</a><br />
+　└<a href="http://labs.beatcraft.com/ja/index.php?Software%2Ftips" title="Software/tips (890d)">tips</a><br /></p>
+<p><a href="http://labs.beatcraft.com/ja/index.php?Hardware" title="Hardware (514d)">Hardware</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Armadillo" rel="nofollow">Armadillo</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Raspberry%20Pi" rel="nofollow">Raspberry Pi</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?BC-USB-Kit" rel="nofollow">BC-USB-Kit</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?ANT" rel="nofollow">ANT</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?DE0-Nano" rel="nofollow">DE0-nano</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?parallella%2Fserial%C0%DC%C2%B3%A4%CE%CA%FD%CB%A1" rel="nofollow">Parallella</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Hardware%2FGalileo" title="Hardware/Galileo (885d)">Intel Galileo</a> <br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Hardware#zc7e322f" rel="nofollow">Intel Atom</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?Hardware#z45cb98c" rel="nofollow">Sensor</a><br />
+　├<a href="http://labs.beatcraft.com/ja/index.php?BeagleBoard-xm%20with%20bc10%A5%AB%A5%E1%A5%E9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" rel="nofollow">Camera Module</a><br />
+　└<a href="http://labs.beatcraft.com/ja/index.php?Hardware%2Fgumstix" title="Hardware/gumstix (1233d)">gumstix</a><br /></p>
+<p><a href="http://labs.beatcraft.com/ja/index.php?%C5%C5%BB%D2%B9%A9%BA%EE" title="電子工作 (1707d)">電子工作</a><br /></p>
+<p><a href="http://labs.beatcraft.com/ja/index.php?Demos" title="Demos (2628d)">Demos</a><br /></p>
+<p><a href="http://labs.beatcraft.com/ja/index.php?%B9%D6%B1%E9%BB%F1%CE%C1" title="講演資料 (2555d)">講演資料</a><br />
+<a href="http://labs.beatcraft.com/ja/index.php?%BB%B2%B9%CD%BB%F1%CE%C1" title="参考資料 (2666d)">参考資料</a><br />
+<a href="http://labs.beatcraft.com/ja/index.php?%A4%BD%A4%CE%C2%BE" title="その他 (2682d)">その他</a><br /></p>
+<p><a href="http://labs.beatcraft.com/en/index.php" rel="nofollow">BC::labs(en)</a></p>
+<p><a href="http://labs.beatcraft.com/ja/index.php?Obsoletes" title="Obsoletes (1183d)">Obsoletes</a><br /></p>
+<p>FAQ<br /></p>
+<p><a href="http://groups.google.com/group/bc9-dev/" rel="nofollow">Googleグループ</a><br />
+<a href="http://groups.google.com/group/bc9-dev/" rel="nofollow">bc9-dev</a><br /></p>
+<p>STAFF BLOG<br />
+　├<a href="http://labs-beatcraft.blogspot.com/" rel="nofollow">BC::blog</a><br />
+　├<a href="http://labs-beatcraft-en.blogspot.com/" rel="nofollow">BC::blog_english</a><br />
+　├<a href="http://outraged-lesserpanda.blogspot.com/" rel="nofollow">Lesser's</a><br />
+　└<a href="http://www.ryuchi.org/work/" rel="nofollow">ryuchi's</a><br /></p>
+<p><a href="http://www.beatcraft.com" rel="nofollow">BEATCRAFT,Inc.</a><br /></p>
+<h5>最新の20件</h5>
+<div><strong>2016-01-27</strong>
+<ul>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Raspberry%20Pi%202%2FWindows%2010%20IoT%20Core%2F%A5%BB%A5%C3%A5%C8%A5%A2%A5%C3%A5%D7%A4%C8%B5%AF%C6%B0" title="Raspberry Pi 2/Windows 10 IoT Core/セットアップと起動 (198d)">Raspberry Pi 2/Windows 10 IoT Core/セットアップと起動</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Raspberry%20Pi" title="Raspberry Pi (198d)">Raspberry Pi</a></li>
+</ul>
+<strong>2016-01-19</strong>
+<ul>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?ANT%2FANT%A4%CE%B4%F0%C1%C3" title="ANT/ANTの基礎 (205d)">ANT/ANTの基礎</a></li>
+</ul>
+<strong>2015-12-24</strong>
+<ul>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Deep%20Learning" title="Deep Learning (232d)">Deep Learning</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Deep%20Learning%2FChainer1.5%A4%CE%C6%B3%C6%FE" title="Deep Learning/Chainer1.5の導入 (232d)">Deep Learning/Chainer1.5の導入</a></li>
+</ul>
+<strong>2015-12-08</strong>
+<ul>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?fluentd%2F%A5%ED%A5%B0%BD%B8%CC%F3%A5%B5%A1%BC%A5%D0%A1%BC" title="fluentd/ログ集約サーバー (248d)">fluentd/ログ集約サーバー</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Armadillo-Box%20WS1%2Ffluentd" title="Armadillo-Box WS1/fluentd (248d)">Armadillo-Box WS1/fluentd</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Armadillo-Box%20WS1%2FWifi%C2%D0%B1%FE" title="Armadillo-Box WS1/Wifi対応 (248d)">Armadillo-Box WS1/Wifi対応</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Armadillo-Box%20WS1%2FBLE%C2%D0%B1%FE" title="Armadillo-Box WS1/BLE対応 (248d)">Armadillo-Box WS1/BLE対応</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Armadillo-Box%20WS1%2FBLE%20Gateway" title="Armadillo-Box WS1/BLE Gateway (248d)">Armadillo-Box WS1/BLE Gateway</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Armadillo" title="Armadillo (248d)">Armadillo</a></li>
+</ul>
+<strong>2015-12-03</strong>
+<ul>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Android%20%A4%C7%20Bluetooth%20Low%20Energy%A1%CABLE%A1%CB%20%A4%F2%BB%C8%CD%D1%A4%B9%A4%EB" title="Android で Bluetooth Low Energy（BLE） を使用する (253d)">Android で Bluetooth Low Energy（BLE） を使用する</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Software%2FAndroid" title="Software/Android (253d)">Software/Android</a></li>
+</ul>
+<strong>2015-11-17</strong>
+<ul>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?MenuBar" title="MenuBar (268d)">MenuBar</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?BC-USB-Kit%2FManual" title="BC-USB-Kit/Manual (269d)">BC-USB-Kit/Manual</a></li>
+</ul>
+<strong>2015-11-06</strong>
+<ul>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Raspberry%20Pi%202%20%A4%C7%20BUFFALO%20WI-U2-433DM%20%A4%F2%BB%C8%A4%A6%A1%CA%A5%BB%A5%EB%A5%D5%A5%B3%A5%F3%A5%D1%A5%A4%A5%EB%A1%CB" title="Raspberry Pi 2 で BUFFALO WI-U2-433DM を使う（セルフコンパイル） (280d)">Raspberry Pi 2 で BUFFALO WI-U2-433DM を使う（セルフコンパイル）</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Raspberry%20Pi%202%20%A4%C7%20Planex%20GW-450D%20%A4%F2%BB%C8%A4%A6%A1%CA%A5%BB%A5%EB%A5%D5%A5%B3%A5%F3%A5%D1%A5%A4%A5%EB%A1%CB" title="Raspberry Pi 2 で Planex GW-450D を使う（セルフコンパイル） (280d)">Raspberry Pi 2 で Planex GW-450D を使う（セルフコンパイル）</a></li>
+</ul>
+<strong>2015-11-05</strong>
+<ul>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Raspberry%20Pi%202%20kernel%20%A5%BB%A5%EB%A5%D5%A5%B3%A5%F3%A5%D1%A5%A4%A5%EB" title="Raspberry Pi 2 kernel セルフコンパイル (281d)">Raspberry Pi 2 kernel セルフコンパイル</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Raspbian%20Jessie" title="Raspbian Jessie (281d)">Raspbian Jessie</a></li>
+ <li><a href="http://labs.beatcraft.com/ja/index.php?Raspbian%20Wheezy" title="Raspbian Wheezy (281d)">Raspbian Wheezy</a></li>
+</ul>
+</div>
+</div>
+  </td>
+  <td valign="top">
+   <div id="body"><p>目次</p>
+<div class="contents">
+<a id="contents_1"></a>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li><a href="#uad089b6">  1. はじめに </a>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="#u6fe2e85">  1.1 概要 </a></li>
+<li><a href="#x3549044">  1.2 対象 </a></li>
+<li><a href="#tde1a05c">  1.3 wxPythonとは </a></li></ul></li>
+<li><a href="#l34486cd">  2. wxPythonを使ってみる </a>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="#wed52250">  2.1 ウィンドウを表示する </a></li>
+<li><a href="#je9687ff">  2.2 コントロールを配置する </a></li>
+<li><a href="#y2c41615">  2.3 イベント処理 </a></li></ul></li>
+<li><a href="#cf3cb1a7">  3. wxGladeによるGUIの構築 </a>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="#xe41ba6f">  3.1 wxGladeとは </a></li>
+<li><a href="#c4fa9b6e">  3.2 wxGladeの使い方 </a></li>
+<li><a href="#qaf0b582">  3.3 ウィンドウを表示する </a></li>
+<li><a href="#ebafd799">  3.4 コントロールを配置する </a></li>
+<li><a href="#e92aa44a">  3.5 イベント処理 </a></li>
+<li><a href="#zcb22311">  3.6 コントロールの配置を変更する </a></li></ul></li>
+<li><a href="#p7791178">  4. py2exeによるexeファイルへの変換 </a>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="#f7d25b10">  4.1 py2exeとは </a></li>
+<li><a href="#y68afc09">  4.2 exeファイルへの変換 </a></li></ul></li></ul>
+</div>
+
+<h2 id="content_1_0">1. はじめに  <a class="anchor_super" id="uad089b6" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#uad089b6" title="uad089b6">&dagger;</a></h2>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_1">1.1 概要  <a class="anchor_super" id="u6fe2e85" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#u6fe2e85" title="u6fe2e85">&dagger;</a></h3>
+<p>　Pythonは手軽に書けて、本格的なプログラミングにも使える、便利な言語です。しかし、標準モジュールとしてGUIツールキットが提供されていないために、WindowsアプリなどのGUIを持ったアプリケーションを作成するには、少し敷居が高くなってしまいます。ここでは、wxPythonというツールキットを導入することで、PythonによるGUIアプリケーションを手軽に作ってみようと思います。</p>
+<p>　動作確認に使用したバージョンは以下のとおりです。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Python 2.6.6</li>
+<li>wxPython 2.8.11</li></ul>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_2">1.2 対象  <a class="anchor_super" id="x3549044" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#x3549044" title="x3549044">&dagger;</a></h3>
+<p>　Pythonによる開発経験のある方を対象としています。Pythonプログラミングの基礎や開発環境の作り方、使い方は特に説明しません。既にPythonとwxPythonがインストールされていることを前提としています。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_3">1.3 wxPythonとは  <a class="anchor_super" id="tde1a05c" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#tde1a05c" title="tde1a05c">&dagger;</a></h3>
+<p>　wxPythonは、Pythonから利用できるGUIツールキットです。その中身は、C++で書かれたwxWidgetsというライブラリをPythonのモジュールとしてラッピングしたものです。wxWidgetsはクロスプラットフォームのライブラリですので、wxPythonもWindows、Linux、MacOSなど環境で利用することができます。<br />
+　今回はWindows環境で説明していきますが、インストールなどが済んで、開発環境ができあがってしまえば、基本的には他のOS上でも同じように作業できると思います。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h2 id="content_1_4">2. wxPythonを使ってみる  <a class="anchor_super" id="l34486cd" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#l34486cd" title="l34486cd">&dagger;</a></h2>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_5">2.1 ウィンドウを表示する  <a class="anchor_super" id="wed52250" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#wed52250" title="wed52250">&dagger;</a></h3>
+<p>　では実際にwxPythonでGUIアプリケーションを作ってみましょう。最初に作るのはウィンドウを表示するだけのアプリケーションです。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_2_1.jpg" title="sample_2_1.jpg"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_2_1.jpg" alt="sample_2_1.jpg" title="sample_2_1.jpg" width="400" height="200" /></a></div>
+<p>　ソースコードは以下のようになっています。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_2_1.py
+<pre>import wx
+
+class SampleApp(wx.App):
+    def OnInit(self):
+        self.init_frame()
+        return True
+
+    def init_frame(self):
+        self.frm_main = wx.Frame(None)
+        self.frm_main.SetTitle(&quot;Hello, wxPython!&quot;)
+        self.frm_main.SetSize((400, 200))
+        self.frm_main.Show()
+
+if __name__ == &quot;__main__&quot;:
+    app = SampleApp(False)
+    app.MainLoop()
+</pre></li></ul>
+<p>　sample_2_1.pyは標準的なwxPythonアプリケーションの雛形です。<br />
+　まず、wx.Appを継承したSampleAppクラスを定義しています。wx.AppはwxPythonプログラムに必須のアプリケーションクラスです。SampleAppではOnInit()メソッドをオーバーライドしています。このメソッドではウィンドウを作成・表示し、Trueを返します。標準的なウィンドウはwx.Frameとして用意されています。<br />
+　このスクリプトを実行すると、SampleAppのオブジェクトが生成され、MainLoop()メソッドが呼ばれます。wx.AppのMainLoop()メソッドでは、内部的にOnInit()が呼び出されます。OnInit()メソッドでウィンドウが作成されたあとは、ウィンドウイベントを処理するループに入ります。ウィンドウが閉じられるまでMainLoop()はブロックします。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_6">2.2 コントロールを配置する  <a class="anchor_super" id="je9687ff" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#je9687ff" title="je9687ff">&dagger;</a></h3>
+<p>　ウィンドウにコントロールをいくつか配置してみましょう。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_2_2.jpg" title="sample_2_2.jpg"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_2_2.jpg" alt="sample_2_2.jpg" title="sample_2_2.jpg" width="400" height="200" /></a></div>
+<p>　ソースコードは以下のようになっています。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_2_2.py
+<pre>import wx
+
+class SampleApp(wx.App):
+    def OnInit(self):
+        self.init_frame()
+        return True
+
+    def init_frame(self):
+        self.frm_main = wx.Frame(None)
+        self.sizer = wx.BoxSizer()
+        self.frm_main.SetSizer(self.sizer)
+        self.txt_title = wx.TextCtrl(self.frm_main)
+        self.sizer.Add(self.txt_title, 1, wx.ALIGN_CENTER_VERTICAL)
+        self.btn_submit = wx.Button(self.frm_main)
+        self.btn_submit.SetLabel(&quot;Submit&quot;)
+        self.sizer.Add(self.btn_submit, 0, wx.ALIGN_CENTER_VERTICAL)
+        self.frm_main.SetTitle(&quot;sample_2_2&quot;)
+        self.frm_main.SetSize((400, 200))
+        self.frm_main.Show()
+
+if __name__ == &quot;__main__&quot;:
+    app = SampleApp(False)
+    app.MainLoop()
+</pre></li></ul>
+<p>　ウィンドウにwx.TextCtrlとwx.Buttonを配置してみました。wxPythonではwx.Frameに直接、コントロールを配置することはできません。必ずwx.Sizerを使用します。wx.Sizerはコントロールのコンテナで、レイアウトマネージャとして動作します。wx.Frameにwx.Sizerをセットし、wx.Sizerの上にコントロールを配置していくイメージになります。sample_2_2ではwx.BoxSizerを使って、一列にコントロールを並べています。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_2_2_sizer.jpg" title="sample_2_2_sizer.jpg"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_2_2_sizer.jpg" alt="sample_2_2_sizer.jpg" title="sample_2_2_sizer.jpg" width="400" height="200" /></a></div>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_7">2.3 イベント処理  <a class="anchor_super" id="y2c41615" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#y2c41615" title="y2c41615">&dagger;</a></h3>
+<p>　コントロールを操作したときのイベント処理を追加してみましょう。sample_2_3は、テキストコントロールにテキストを入力してボタンを押すと、ウィンドウのタイトルが変更されるというサンプルアプリケーションになっています。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_2_3.jpg" title="sample_2_3.jpg"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_2_3.jpg" alt="sample_2_3.jpg" title="sample_2_3.jpg" width="514" height="500" /></a></div>
+<p>　ソースコードは以下のようになっています。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_2_3.py
+<pre>import wx
+
+class SampleApp(wx.App):
+    def OnInit(self):
+        self.init_frame()
+        return True
+
+    def init_frame(self):
+        self.frm_main = wx.Frame(None)
+        self.sizer = wx.BoxSizer()
+        self.frm_main.SetSizer(self.sizer)
+        self.txt_title = wx.TextCtrl(self.frm_main)
+        self.sizer.Add(self.txt_title, 1, wx.ALIGN_CENTER_VERTICAL)
+        self.btn_submit = wx.Button(self.frm_main)
+        self.btn_submit.SetLabel(&quot;Change Title&quot;)
+        self.btn_submit.Bind(wx.EVT_BUTTON, self.on_submit)
+        self.sizer.Add(self.btn_submit, 0, wx.ALIGN_CENTER_VERTICAL)
+        self.frm_main.SetTitle(&quot;sample_2_3&quot;)
+        self.frm_main.SetSize((400, 200))
+        self.frm_main.Show()
+
+    def on_submit(self, event):
+        self.frm_main.SetTitle(self.txt_title.GetValue())
+        self.txt_title.SetValue(&quot;&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    app = SampleApp(False)
+    app.MainLoop()
+</pre></li></ul>
+<p>　基本的な構造はsample_2_2と同じで、見た目の違いはほとんどありません。SampleAppにon_submit()メソッドを追加し、39行目でwx.ButtonにBindしています。ボタンが押されるとwx.EVT_BUTTONイベントが発生し、on_submit()が呼ばれます。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h2 id="content_1_8">3. wxGladeによるGUIの構築  <a class="anchor_super" id="cf3cb1a7" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#cf3cb1a7" title="cf3cb1a7">&dagger;</a></h2>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_9">3.1 wxGladeとは  <a class="anchor_super" id="xe41ba6f" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#xe41ba6f" title="xe41ba6f">&dagger;</a></h3>
+<p>　これまで見てきたように、テキストエディタだけでも、GUIプログラミングは可能です。ですが、やはりGUIコントロールの配置などは、VisualBasicなどのような見た目に分かりやすい開発環境で開発したくなると思います。そこで、GUIコントロールの配置を楽にできるwxGladeを使った開発をしてみます。<br />
+　今回使用したのはwxGlade v0.6.3です。</p>
+<p>　wxGladeはGUIコントロールをマウスによるドラッグアンドドロップで配置することができるツールです。作成したGUIの配置データから、Pythonのソースコードを出力することも可能ですが、おすすめはXRC(XML)出力です。<br />
+　ソースコードで出力した場合、イベントハンドラなどを追加するために、そのソースコードを編集したくなるのですが、GUIの配置変更などのために、wxGladeからソースコードを再出力すると追加したイベントハンドラなどは消えてしまいます。そこで、wxGladeから出力するのはXRC形式の純粋な配置情報のみにしておき、イベントハンドラなどのコードは別のソースファイルに分離することで、それぞれ個別に開発を進めることができます。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_10">3.2 wxGladeの使い方  <a class="anchor_super" id="c4fa9b6e" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#c4fa9b6e" title="c4fa9b6e">&dagger;</a></h3>
+<p>　wxGladeを起動すると、３つのウィンドウが表示されます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>メインウィンドウ
+<div class="img_margin" style="text-align:left"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=wxglade_main.png" title="wxglade_main.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=wxglade_main.png" alt="wxglade_main.png" title="wxglade_main.png" width="171" height="300" /></a></div>
+</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ツリーウィンドウ
+<div class="img_margin" style="text-align:left"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=wxglade_tree.png" title="wxglade_tree.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=wxglade_tree.png" alt="wxglade_tree.png" title="wxglade_tree.png" width="300" height="300" /></a></div>
+</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>プロパティウィンドウ
+<div class="img_margin" style="text-align:left"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=wxglade_prop.png" title="wxglade_prop.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=wxglade_prop.png" alt="wxglade_prop.png" title="wxglade_prop.png" width="250" height="350" /></a></div>
+</li></ul>
+<p>　メインウィンドウにはFrameやコントロールなど、配置可能なGUIのパーツが並んでいます。ツリーウィンドウにはGUIの階層構造が表示されます。プロパティウィンドウでは選択されているコントロールのパラメタなどを設定することができます。<br />
+　各ウィンドウの具体的な使い方などはこのあと、実際の作業を通して見ていきたいと思います。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_11">3.3 ウィンドウを表示する  <a class="anchor_super" id="qaf0b582" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#qaf0b582" title="qaf0b582">&dagger;</a></h3>
+<p>　やはり最初はウィンドウを表示するだけのアプリケーションをつくるところから始めてみましょう。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_3.png" title="sample_3_3.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_3.png" alt="sample_3_3.png" title="sample_3_3.png" width="400" height="200" /></a></div>
+<p>　実行したときの見た目はsample_2_2とほとんど同じです。このアプリケーションを作成する手順を見ていきましょう。まずはwxGladeでGUIの配置情報を生成します。</p>
+<p>　wxGladeを起動したら、まずプロパティ画面で以下の基本設定を変更します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>出力形式をXRCに変更する。</li>
+<li>EncodingをUTF-8に変更する。</li>
+<li>出力するファイル名を設定する。</li></ul>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_3_property.png" title="sample_3_3_property.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_3_property.png" alt="sample_3_3_property.png" title="sample_3_3_property.png" width="250" height="531" /></a></div>
+<p>　基本設定が終わったら、さっそくwx.Frameを追加してみましょう。メイン画面の「Add a Frame」ボタンを押すと、フレームクラスを選択するダイアログが表示されるので、wxFrameを選択してOKを押しましょう。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_3_select_frame_class.png" title="sample_3_3_select_frame_class.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_3_select_frame_class.png" alt="sample_3_3_select_frame_class.png" title="sample_3_3_select_frame_class.png" width="184" height="182" /></a></div>
+<p>　するとツリー画面にframe_1が追加され、新たにデザイン画面が表示されます。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_3_tree.png" title="sample_3_3_tree.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_3_tree.png" alt="sample_3_3_tree.png" title="sample_3_3_tree.png" width="300" height="300" /></a></div>
+<p>　ツリー画面に追加されたframe_1を選択すると、プロパティ画面でこのFrameのプロパティを編集できるようになります。今回はName属性をframe_mainと編集しておきましょう。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_3_property_frame.png" title="sample_3_3_property_frame.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_3_property_frame.png" alt="sample_3_3_property_frame.png" title="sample_3_3_property_frame.png" width="250" height="350" /></a></div>
+<p>　デザイン画面はここで定義しているウィンドウを表示したときのイメージになります。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_3_design.png" title="sample_3_3_design.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_3_design.png" alt="sample_3_3_design.png" title="sample_3_3_design.png" width="400" height="300" /></a></div>
+<p>　ウィンドウタイトルなどの細かい設定はソースコードのほうで行うので、今回はこのままXRCを生成します。メイン画面のメニューから「Generate Code」を選択し、XRCファイルを出力します。出力先は先ほどプロパティ画面で設定した場所になります。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_3_generate_code.png" title="sample_3_3_generate_code.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_3_generate_code.png" alt="sample_3_3_generate_code.png" title="sample_3_3_generate_code.png" width="458" height="313" /></a></div>
+<p>　出力したXRCファイルは以下のようになります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_3_3.xrc
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- generated by wxGlade 0.6.3 on Wed Nov 16 22:19:37 2011 --&gt;
+
+&lt;resource version=&quot;2.3.0.1&quot;&gt;
+    &lt;object class=&quot;wxFrame&quot; name=&quot;frame_main&quot;&gt;
+        &lt;style&gt;wxDEFAULT_FRAME_STYLE&lt;/style&gt;
+        &lt;title&gt;frame_main&lt;/title&gt;
+        &lt;object class=&quot;wxBoxSizer&quot;&gt;
+            &lt;orient&gt;wxVERTICAL&lt;/orient&gt;
+        &lt;/object&gt;
+    &lt;/object&gt;
+&lt;/resource&gt;
+</pre></li></ul>
+<p>　sample_3_3.xrcに出力したウィンドウを表示するためのソースコードは以下のようになります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_3_3.py
+<pre>import wx
+from wx import xrc
+
+XRC_FILE = &quot;sample_3_3.xrc&quot;
+
+class SampleApp(wx.App):
+    def OnInit(self):
+        self.res = xrc.XmlResource(XRC_FILE)
+        self.init_frame()
+        return True
+
+    def init_frame(self):
+        self.frm_main = self.res.LoadFrame(None, &quot;frame_main&quot;)
+        self.frm_main.SetTitle(&quot;sample_3_3&quot;)
+        self.frm_main.SetSize((400, 200))
+        self.frm_main.Show()
+
+if __name__ == &quot;__main__&quot;:
+    app = SampleApp(False)
+    app.MainLoop()
+</pre></li></ul>
+<p>　まず、8行目でxrc.XmlResourceとして先ほどのXRCファイルを読み込んで、リソースをオブジェクト化しています。13行目でLoadFrame()メソッドを使ってリソースからwx.Frameの情報をロードしています。ロードする際に必要なパラメタはFrameのName属性です。このようにwxGladeでGUIを構築するときに、コントロールなどのNameを分かりやすくつけておくことで、ソースコードを記述しやすくなります。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_12">3.4 コントロールを配置する  <a class="anchor_super" id="ebafd799" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#ebafd799" title="ebafd799">&dagger;</a></h3>
+<p>　続いてwxGladeでコントロールを配置する手順を見てみます。sample_3_3で作成したウィンドウにwx.TextCtrlとwx.Buttonを配置します。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_4.png" title="sample_3_4.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_4.png" alt="sample_3_4.png" title="sample_3_4.png" width="400" height="200" /></a></div>
+<p>　コントロールの配置にwx.Sizerが必要なことは先ほど述べましたが、sample_3_3で作成したframe_mainには既にsizerが設定されています。ところが、このsizerはコントロールを縦に配置していくwx.BoxSizerです。今回はコントロールを横に配置していきたいので、ひとまずsizerをツリー画面から削除します。<br />
+　続いて、メイン画面から「Add a BoxSizer」を選択し、frame_mainのデザイン画面でsizerを追加します。この時、OrientationをHorizontalに、Slotsを2に設定しておきます。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_4_sizer.png" title="sample_3_4_sizer.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_4_sizer.png" alt="sample_3_4_sizer.png" title="sample_3_4_sizer.png" width="185" height="219" /></a></div>
+<p>　先ほどと同じようにメイン画面から「Add a TextCtrl」を選択し、ウィンドウの左側にwx.TextCtrlを配置します。wx.Buttonも同様にしてウィンドウの右側に配置します。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_4_design.png" title="sample_3_4_design.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_4_design.png" alt="sample_3_4_design.png" title="sample_3_4_design.png" width="400" height="300" /></a></div>
+<p>　コントロールのName属性などを設定し、sample_3_4.xrcとして出力します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_3_4.xrc
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- generated by wxGlade 0.6.3 on Wed Nov 16 22:15:53 2011 --&gt;
+
+&lt;resource version=&quot;2.3.0.1&quot;&gt;
+    &lt;object class=&quot;wxFrame&quot; name=&quot;frame_main&quot;&gt;
+        &lt;style&gt;wxDEFAULT_FRAME_STYLE&lt;/style&gt;
+        &lt;size&gt;400, 300&lt;/size&gt;
+        &lt;title&gt;main_frame&lt;/title&gt;
+        &lt;object class=&quot;wxBoxSizer&quot;&gt;
+            &lt;orient&gt;wxHORIZONTAL&lt;/orient&gt;
+            &lt;object class=&quot;sizeritem&quot;&gt;
+                &lt;option&gt;1&lt;/option&gt;
+                &lt;flag&gt;wxALIGN_CENTER_VERTICAL&lt;/flag&gt;
+                &lt;object class=&quot;wxTextCtrl&quot; name=&quot;text_input&quot;&gt;
+                &lt;/object&gt;
+            &lt;/object&gt;
+            &lt;object class=&quot;sizeritem&quot;&gt;
+                &lt;flag&gt;wxALIGN_CENTER_VERTICAL&lt;/flag&gt;
+                &lt;object class=&quot;wxButton&quot; name=&quot;button_submit&quot;&gt;
+                    &lt;label&gt;Submit&lt;/label&gt;
+                &lt;/object&gt;
+            &lt;/object&gt;
+        &lt;/object&gt;
+    &lt;/object&gt;
+&lt;/resource&gt;
+</pre></li></ul>
+<p>　このウィンドウを表示するソースコードですが、リソースを読み込んで表示するだけですので、実はsample_3_3とほとんど変わりません。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_3_4.py
+<pre>import wx
+from wx import xrc
+
+XRC_FILE = &quot;sample_3_4.xrc&quot;
+
+class SampleApp(wx.App):
+    def OnInit(self):
+        self.res = xrc.XmlResource(XRC_FILE)
+        self.init_frame()
+        return True
+
+    def init_frame(self):
+        self.frm_main = self.res.LoadFrame(None, &quot;frame_main&quot;)
+        self.txt_input = xrc.XRCCTRL(self.frm_main, &quot;text_input&quot;)
+        self.btn_submit = xrc.XRCCTRL(self.frm_main, &quot;button_submit&quot;)
+        self.frm_main.SetTitle(&quot;sample_3_4&quot;)
+        self.frm_main.SetSize((400, 200))
+        self.frm_main.Show()
+
+if __name__ == &quot;__main__&quot;:
+    app = SampleApp(False)
+    app.MainLoop()
+</pre></li></ul>
+<p>　このようにアプリケーションの動作を変更せずに、コントロールの追加などをおこなうだけならば、ソースコードの変更は必要なくなるというメリットがあります。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_13">3.5 イベント処理  <a class="anchor_super" id="e92aa44a" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#e92aa44a" title="e92aa44a">&dagger;</a></h3>
+<p>　sample_3_4にイベント処理を追加します。動作はsample_2_3と同じで、TextCtrlにテキストを入力し、Buttonを押すと、Frameのタイトルが変更されます。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_5.png" title="sample_3_5.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_5.png" alt="sample_3_5.png" title="sample_3_5.png" width="413" height="458" /></a></div>
+<p>　GUIの配置には変更がないので、XRCファイルはsample_3_4とほとんど変わりません。ボタンのラベルが少し変わった程度です。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_3_5.xrc
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- generated by wxGlade 0.6.3 on Wed Nov 16 22:16:28 2011 --&gt;
+
+&lt;resource version=&quot;2.3.0.1&quot;&gt;
+    &lt;object class=&quot;wxFrame&quot; name=&quot;frame_main&quot;&gt;
+        &lt;style&gt;wxDEFAULT_FRAME_STYLE&lt;/style&gt;
+        &lt;size&gt;400, 300&lt;/size&gt;
+        &lt;title&gt;main_frame&lt;/title&gt;
+        &lt;object class=&quot;wxBoxSizer&quot;&gt;
+            &lt;orient&gt;wxHORIZONTAL&lt;/orient&gt;
+            &lt;object class=&quot;sizeritem&quot;&gt;
+                &lt;option&gt;1&lt;/option&gt;
+                &lt;flag&gt;wxALIGN_CENTER_VERTICAL&lt;/flag&gt;
+                &lt;object class=&quot;wxTextCtrl&quot; name=&quot;text_title&quot;&gt;
+                &lt;/object&gt;
+            &lt;/object&gt;
+            &lt;object class=&quot;sizeritem&quot;&gt;
+                &lt;flag&gt;wxALIGN_CENTER_VERTICAL&lt;/flag&gt;
+                &lt;object class=&quot;wxButton&quot; name=&quot;button_submit&quot;&gt;
+                    &lt;label&gt;ChangeTitle&lt;/label&gt;
+                &lt;/object&gt;
+            &lt;/object&gt;
+        &lt;/object&gt;
+    &lt;/object&gt;
+&lt;/resource&gt;
+</pre></li></ul>
+<p>　ソースコードは以下のようになっています。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_3_5.py
+<pre>import wx
+from wx import xrc
+
+XRC_FILE = &quot;sample_3_5.xrc&quot;
+
+class SampleApp(wx.App):
+    def OnInit(self):
+        self.res = xrc.XmlResource(XRC_FILE)
+        self.init_frame()
+        return True
+
+    def init_frame(self):
+        self.frm_main = self.res.LoadFrame(None, &quot;frame_main&quot;)
+        self.txt_title = xrc.XRCCTRL(self.frm_main, &quot;text_title&quot;)
+        self.btn_submit = xrc.XRCCTRL(self.frm_main, &quot;button_submit&quot;)
+        self.btn_submit.Bind(wx.EVT_BUTTON, self.on_submit)
+        self.frm_main.SetTitle(&quot;sample_3_5&quot;)
+        self.frm_main.SetSize((400, 200))
+        self.frm_main.Show()
+
+    def on_submit(self, event):
+        self.frm_main.SetTitle(self.txt_title.GetValue())
+        self.txt_title.SetValue(&quot;&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    app = SampleApp(False)
+    app.MainLoop()
+</pre></li></ul>
+<p>　コントロールをXRCのリソースから読み込むところが違うだけで、イベント処理自体はsample_2_3と同じように、Bind()メソッドとイベントハンドラで記述できます。<br />
+　XRCリソースからコントロールを読み込むにはxrc.XRCCTRL()を使います。必要なパラメタは親コントロールとName属性です。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_14">3.6 コントロールの配置を変更する  <a class="anchor_super" id="zcb22311" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#zcb22311" title="zcb22311">&dagger;</a></h3>
+<p>　GUIの配置情報をXRCに分割することによって、ソースコードを変更せずにアプリケーションの見た目を変更することができるようになります。試しにsample_3_5を少し改造して、コントロールの配置だけを変えてみましょう。</p>
+<div style="text-align:center"><a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;openfile=sample_3_6.png" title="sample_3_6.png"><img src="http://labs.beatcraft.com/ja/index.php?plugin=ref&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0&amp;src=sample_3_6.png" alt="sample_3_6.png" title="sample_3_6.png" width="400" height="200" /></a></div>
+<p>　wx.BoxSizerの配置方向をHORIZONTALからVERTICALに変更し、コントロールが縦方向に並ぶようにしました。また、そのままではコントロール間の隙間がなく見づらかったので、wx.TextCtrlとwx.ButtonにBorderを設定して見やすくしました。<br />
+　sample_3_6のXRCファイルは以下のようになっています。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_3_6.xrc
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- generated by wxGlade 0.6.3 on Fri Nov 25 13:03:14 2011 --&gt;
+
+&lt;resource version=&quot;2.3.0.1&quot;&gt;
+    &lt;object class=&quot;wxFrame&quot; name=&quot;frame_main&quot;&gt;
+        &lt;style&gt;wxDEFAULT_FRAME_STYLE&lt;/style&gt;
+        &lt;size&gt;400, 300&lt;/size&gt;
+        &lt;title&gt;main_frame&lt;/title&gt;
+        &lt;object class=&quot;wxBoxSizer&quot;&gt;
+            &lt;orient&gt;wxVERTICAL&lt;/orient&gt;
+            &lt;object class=&quot;sizeritem&quot;&gt;
+                &lt;flag&gt;wxALL|wxALIGN_CENTER_VERTICAL&lt;/flag&gt;
+                &lt;border&gt;10&lt;/border&gt;
+                &lt;object class=&quot;wxTextCtrl&quot; name=&quot;text_title&quot;&gt;
+                    &lt;size&gt;200, 22&lt;/size&gt;
+                &lt;/object&gt;
+            &lt;/object&gt;
+            &lt;object class=&quot;sizeritem&quot;&gt;
+                &lt;flag&gt;wxALL|wxALIGN_CENTER_VERTICAL&lt;/flag&gt;
+                &lt;border&gt;10&lt;/border&gt;
+                &lt;object class=&quot;wxButton&quot; name=&quot;button_submit&quot;&gt;
+                    &lt;label&gt;ChangeTitle&lt;/label&gt;
+                &lt;/object&gt;
+            &lt;/object&gt;
+        &lt;/object&gt;
+    &lt;/object&gt;
+&lt;/resource&gt;
+</pre></li></ul>
+<p>　ソースコードは以下のようになっています。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>sample_3_6.py
+<pre>import wx
+from wx import xrc
+
+XRC_FILE = &quot;sample_3_6.xrc&quot;
+
+class SampleApp(wx.App):
+    def OnInit(self):
+        self.res = xrc.XmlResource(XRC_FILE)
+        self.init_frame()
+        return True
+
+    def init_frame(self):
+        self.frm_main = self.res.LoadFrame(None, &quot;frame_main&quot;)
+        self.txt_title = xrc.XRCCTRL(self.frm_main, &quot;text_title&quot;)
+        self.btn_submit = xrc.XRCCTRL(self.frm_main, &quot;button_submit&quot;)
+        self.btn_submit.Bind(wx.EVT_BUTTON, self.on_submit)
+        self.frm_main.SetTitle(&quot;sample_3_6&quot;)
+        self.frm_main.SetSize((400, 200))
+        self.frm_main.Show()
+
+    def on_submit(self, event):
+        self.frm_main.SetTitle(self.txt_title.GetValue())
+        self.txt_title.SetValue(&quot;&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    app = SampleApp(False)
+    app.MainLoop()
+</pre></li></ul>
+<p>　読み込むXRCファイル名と、起動時のウィンドウタイトルだけを変更しています。</p>
+<p>　このようにGUI配置情報をXRCリソースに分割することで、画面デザインとイベント処理などを個別に開発できるようになります。また、wxGladeを使うことで視覚的に分かりやすくGUIの構築をおこなうことができます。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h2 id="content_1_15">4. py2exeによるexeファイルへの変換  <a class="anchor_super" id="p7791178" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#p7791178" title="p7791178">&dagger;</a></h2>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_16">4.1 py2exeとは  <a class="anchor_super" id="f7d25b10" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#f7d25b10" title="f7d25b10">&dagger;</a></h3>
+<p>　Pythonでウィンドウアプリケーションが作れるようになったので、もう一歩踏み込んで、このアプリケーションをexe（実行可能）ファイルにしてみます。</p>
+<p>　py2exeというツールを使うと、PythonアプリケーションをWindows exeファイルに変換することができます。exeファイルにすれば、配布先のPCにPythonをあらかじめインストールしておく必要はなくなります。</p>
+
+<div class="jumpmenu"><a href="#navigator">&uarr;</a></div><h3 id="content_1_17">4.2 exeファイルへの変換  <a class="anchor_super" id="y68afc09" href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0#y68afc09" title="y68afc09">&dagger;</a></h3>
+<p>　先ほどのサンプルsample_3_5をexeに変換します。まずpy2exeに必要な設定を記述します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>build.py
+<pre>from distutils.core import setup
+import py2exe
+
+py2exe_options = {
+    &quot;compressed&quot;: 1,
+    &quot;optimize&quot;: 2,
+    &quot;bundle_files&quot;: 2}
+
+setup(
+    options = {&quot;py2exe&quot;: py2exe_options},
+    windows = [
+        {&quot;script&quot; : &quot;sample_3_5.py&quot;}],
+    zipfile = None)
+</pre></li></ul>
+<p>　続いてpy2exeを実行するのですが、このとき、py2exeを引数にしてbuild.pyを実行するという少し分かりづらい呼び出しかたをする必要があるので、バッチファイルなどで実行手順を作っておくと作業が楽になります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>build.bat
+<pre>build.py py2exe
+copy .\msvcp90.dll .\dist\
+copy .\sample_3_5.xrc .\dist\
+move .\dist .\sample_3_5-bin
+rmdir /s /q .\build
+</pre></li></ul>
+<p>　build.batと同じフォルダにsample_3_5のソースファイルとXRCファイルを入れておきます。また、msvcp90.dllというDLLファイルが必要になりますので、これも同じフォルダに入れておきます。<br />
+　build.batを実行すると、sample_3_5-binフォルダの下にexeファイルが生成されます。こうして生成したアプリケーションを配布する場合は、フォルダごと配布します。配布先のPCにPythonやwxPythonがインストールされている必要はありません。</p>
+<hr class="full_hr" />
+<div style="text-align:right">野田</div>
+</div>
+  </td>
+ </tr>
+</table>
+
+
+<div id="attach">
+<hr class="full_hr" />添付ファイル: <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=wxglade_tree.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:55:35 8.4KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />wxglade_tree.png</a> <span class="small">656件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=wxglade_tree.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=wxglade_prop.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:55:27 17.3KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />wxglade_prop.png</a> <span class="small">630件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=wxglade_prop.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=wxglade_main.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:55:17 19.0KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />wxglade_main.png</a> <span class="small">742件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=wxglade_main.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_6.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:55:08 11.5KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_6.png</a> <span class="small">666件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_6.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_5.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:54:59 29.9KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_5.png</a> <span class="small">644件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_5.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_4_sizer.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:54:50 10.8KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_4_sizer.png</a> <span class="small">618件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_4_sizer.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_4_design.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:54:43 13.9KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_4_design.png</a> <span class="small">683件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_4_design.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_4.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:54:34 11.2KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_4.png</a> <span class="small">642件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_4.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_3_tree.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:54:25 14.6KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_3_tree.png</a> <span class="small">601件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_3_tree.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_3_select_frame_class.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:54:04 11.9KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_3_select_frame_class.png</a> <span class="small">582件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_3_select_frame_class.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_3_property_frame.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:53:56 15.9KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_3_property_frame.png</a> <span class="small">630件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_3_property_frame.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_3_property.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:53:46 24.2KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_3_property.png</a> <span class="small">606件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_3_property.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_3_generate_code.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:53:33 16.4KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_3_generate_code.png</a> <span class="small">654件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_3_generate_code.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_3_design.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:53:24 12.2KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_3_design.png</a> <span class="small">674件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_3_design.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_3_3.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:53:14 10.4KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_3_3.png</a> <span class="small">648件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_3_3.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_2_3.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:53:04 81.0KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_2_3.png</a> <span class="small">313件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_2_3.png&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_2_3.jpg&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:52:50 34.4KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_2_3.jpg</a> <span class="small">713件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_2_3.jpg&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_2_2_sizer.jpg&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:52:35 19.3KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_2_2_sizer.jpg</a> <span class="small">676件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_2_2_sizer.jpg&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_2_2.jpg&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:52:00 13.1KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_2_2.jpg</a> <span class="small">687件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_2_2.jpg&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=open&amp;file=sample_2_1.jpg&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="2011/12/12 18:51:38 10.1KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />sample_2_1.jpg</a> <span class="small">713件</span>
+<span class="small">[<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=info&amp;file=sample_2_1.jpg&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0" title="添付ファイルの情報">詳細</a>]</span>
+ 
+</div>
+
+<hr class="full_hr" />
+<div align="right">
+BC::labsへの質問は、bc9-dev ＠ googlegroups.com　までお願い致します。
+</div>
+
+<!-- Toolbar -->
+<div id="toolbar">
+
+ <a href="http://labs.beatcraft.com/ja/index.php?labs.beatcraft.com"><img src="image/top.png" width="20" height="20" alt="トップ" title="トップ" /></a>
+ &nbsp;
+ 	<a href="http://labs.beatcraft.com/ja/index.php?cmd=edit&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/edit.png" width="20" height="20" alt="編集" title="編集" /></a>			<a href="http://labs.beatcraft.com/ja/index.php?cmd=freeze&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/freeze.png" width="20" height="20" alt="凍結" title="凍結" /></a>	  <a href="http://labs.beatcraft.com/ja/index.php?cmd=diff&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/diff.png" width="20" height="20" alt="差分" title="差分" /></a>	<a href="http://labs.beatcraft.com/ja/index.php?cmd=backup&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/backup.png" width="20" height="20" alt="バックアップ" title="バックアップ" /></a>			<a href="http://labs.beatcraft.com/ja/index.php?plugin=attach&amp;pcmd=upload&amp;page=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/file.png" width="20" height="20" alt="添付" title="添付" /></a>		<a href="http://labs.beatcraft.com/ja/index.php?plugin=template&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/copy.png" width="20" height="20" alt="複製" title="複製" /></a>	<a href="http://labs.beatcraft.com/ja/index.php?plugin=rename&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/rename.png" width="20" height="20" alt="名前変更" title="名前変更" /></a> <a href="http://labs.beatcraft.com/ja/index.php?Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/reload.png" width="20" height="20" alt="リロード" title="リロード" /></a> &nbsp;
+	<a href="http://labs.beatcraft.com/ja/index.php?plugin=newpage&amp;refer=Python%2FwxPython%A4%CB%A4%E8%A4%EBWindowsGUI%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0"><img src="image/new.png" width="20" height="20" alt="新規" title="新規" /></a> <a href="http://labs.beatcraft.com/ja/index.php?cmd=list"><img src="image/list.png" width="20" height="20" alt="一覧" title="一覧" /></a> <a href="http://labs.beatcraft.com/ja/index.php?cmd=search"><img src="image/search.png" width="20" height="20" alt="単語検索" title="単語検索" /></a> <a href="http://labs.beatcraft.com/ja/index.php?RecentChanges"><img src="image/recentchanges.png" width="20" height="20" alt="最終更新" title="最終更新" /></a> &nbsp; <a href="http://labs.beatcraft.com/ja/index.php?cmd=rss&amp;ver=1.0"><img src="image/rss.png" width="36" height="14" alt="最終更新のRSS" title="最終更新のRSS" /></a></div>
+
+<div id="lastmodified">Last-modified: 2011-12-12 (月) 19:11:41  (1705d)</div>
+
+<div id="related">Link: <a href="http://labs.beatcraft.com/ja/index.php?Python">Python</a>(688d)</div>
+
+
+<div id="footer">
+ Site admin: <a href="http://www.beatcraft.com/">ryuchi</a><p />
+ <strong>PukiWiki 1.4.7</strong> Copyright &copy; 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br /> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
+ Powered by PHP 5.2.15. HTML convert time: 0.156 sec.
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8786091-2']);
+  _gaq.push(['_setDomainName', '.beatcraft.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
